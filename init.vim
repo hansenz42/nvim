@@ -10,9 +10,12 @@ set expandtab
 set number
 set shiftwidth=4
 set clipboard+=unnamed
+set number relativenumber
+set scrolloff=5
 
 let mapleader = ','
 
 " nvimtree plugin hotkey for neovim
-nmap <D-1> :NvimTreeToggle<CR>
-nmap <leader>ne :NvimTreeToggle<CR>
+nmap <D-1> :NvimTreeFocus<CR>
+nmap <leader>ne :NvimTreeFocus<CR>
+

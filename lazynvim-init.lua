@@ -48,12 +48,23 @@ local copilot = {
     "github/copilot.vim"
 }
 
+local surround = {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+}
 
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
     lualine_plugin,
     colorscheme,
-    copilot
+    copilot,
+    surround
 })
    
