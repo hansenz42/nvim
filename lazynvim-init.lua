@@ -60,6 +60,12 @@ local surround = {
     end
 }
 
+local commenter = {
+    'numToStr/Comment.nvim',
+    opts = {},
+    lazy = false
+}
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
@@ -67,5 +73,6 @@ require("lazy").setup({
     colorscheme,
     copilot,
     surround,
+    commenter
 })
    
