@@ -25,7 +25,8 @@ local nvim_tree_plugin = {
     version = "*",
     dependencies = {"nvim-tree/nvim-web-devicons"},
     config = function()
-        require("nvim-tree").setup {}
+        require("nvim-tree").setup {
+        }
     end
 }
 local lualine_plugin = {
@@ -65,6 +66,6 @@ require("lazy").setup({
     lualine_plugin,
     colorscheme,
     copilot,
-    surround
+    surround,
 })
    

@@ -12,6 +12,7 @@ set shiftwidth=4
 set clipboard+=unnamed
 set number relativenumber
 set scrolloff=5
+set autochdir
 
 let mapleader = ','
 
