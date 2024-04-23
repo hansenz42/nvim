@@ -13,6 +13,7 @@ set clipboard+=unnamed
 set number relativenumber
 set scrolloff=5
 set autochdir
+set incsearch
 
 let mapleader = ','
 
