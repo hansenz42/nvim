@@ -71,7 +71,6 @@ require("lazy").setup({
     nvim_tree_plugin, 
     lualine_plugin,
     colorscheme,
-    copilot,
     surround,
     commenter
 })
