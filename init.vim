@@ -1,4 +1,3 @@
-cd ~/.config/nvim
 lua require('lazynvim-init')
 lua require('init-lua')
 
