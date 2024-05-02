@@ -1,6 +1,6 @@
-cd ~/.config/nvim
-lua require('lazynvim-init')
-lua require('init-lua')
+" cd ~/.config/nvim
+lua require('./lazynvim-init')
+lua require('./init-lua')
 
 filetype plugin indent on
 syntax on
