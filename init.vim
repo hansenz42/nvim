@@ -20,3 +20,10 @@ let mapleader = ','
 nmap <D-1> :NvimTreeFocus<CR>
 nmap <leader>ne :NvimTreeFocus<CR>
 
+" basic key mapping
+nnoremap L $
+vnoremap H ^
+nnoremap H ^
+vnoremap L $
+nnoremap K %
+vnoremap K %
