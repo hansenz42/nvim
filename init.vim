@@ -27,3 +27,4 @@ nnoremap H ^
 vnoremap L $
 nnoremap K %
 vnoremap K %
+nnoremap K i<CR><Esc>
