@@ -13,7 +13,6 @@ set number relativenumber
 set scrolloff=5
 set autochdir
 set incsearch
-set iskeyword-=_ 
 
 let mapleader = ','
 
