@@ -45,10 +45,6 @@ local colorscheme = {
     end,
 }
 
-local copilot = {
-    "github/copilot.vim"
-}
-
 local surround = {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -66,12 +62,90 @@ local commenter = {
     lazy = false
 }
 
+local telescope = {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = {'nvim-lua/plenary.nvim'}
+}
+
+local tree_sitter = {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "java", "python", "rust", "go" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },  
+        })
+    end
+}
+
+local nvim_cmp = {
+	"hrsh7th/nvim-cmp",
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-nvim-lua",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"saadparwaiz1/cmp_luasnip",
+		"L3MON4D3/LuaSnip",
+	},
+}
+
+nvim_cmp.config = function()
+	local cmp = require("cmp")
+	vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+			end,
+		},
+		window = {
+			-- completion = cmp.config.window.bordered(),
+			-- documentation = cmp.config.window.bordered(),
+		},
+		mapping = cmp.mapping.preset.insert({
+			["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-e>"] = cmp.mapping.abort(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		}),
+		sources = cmp.config.sources({
+			{ name = "nvim_lsp" },
+			{ name = "nvim_lua" },
+			{ name = "luasnip" }, -- For luasnip users.
+			-- { name = "orgmode" },
+		}, {
+			{ name = "buffer" },
+			{ name = "path" },
+		}),
+	})
+
+	cmp.setup.cmdline(":", {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = cmp.config.sources({
+			{ name = "path" },
+		}, {
+			{ name = "cmdline" },
+		}),
+	})
+end
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
     lualine_plugin,
     colorscheme,
     surround,
-    commenter
+    commenter,
+    telescope,
+    tree_sitter,
+    nvim_cmp
 })
    

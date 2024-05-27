@@ -17,8 +17,8 @@ set incsearch
 let mapleader = ','
 
 " nvimtree plugin hotkey for neovim
-nmap <D-1> :NvimTreeFocus<CR>
 nmap <leader>ne :NvimTreeFocus<CR>
+nmap <C-n> :NvimTreeFocus<CR>
 
 " basic key mapping
 nnoremap L $
@@ -28,3 +28,9 @@ vnoremap L $
 nnoremap K %
 vnoremap K %
 nnoremap K i<CR><Esc>
+
+" Telescope config
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
