@@ -137,6 +137,11 @@ nvim_cmp.config = function()
 	})
 end
 
+local codeium = {
+    "Exafunction/codeium.vim",
+    event = "BufEnter"
+}
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
@@ -146,6 +151,7 @@ require("lazy").setup({
     commenter,
     telescope,
     tree_sitter,
-    nvim_cmp
+    nvim_cmp,
+    codeium
 })
    
