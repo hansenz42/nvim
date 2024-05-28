@@ -142,6 +142,12 @@ local codeium = {
     event = "BufEnter"
 }
 
+local toggleterm = {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true
+}
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
@@ -152,6 +158,7 @@ require("lazy").setup({
     telescope,
     tree_sitter,
     nvim_cmp,
-    codeium
+    codeium,
+    toggleterm
 })
    
