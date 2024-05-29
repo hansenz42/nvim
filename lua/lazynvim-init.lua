@@ -61,8 +61,8 @@ local comment = {
     opts = {
         sticky = true,
         toggler = {
-            line =  ',cc',
-            block = ',bc',
+            line =  '<leader>cc',
+            block = '<leader>bc',
         }
     },
     lazy = false,
