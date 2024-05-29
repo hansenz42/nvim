@@ -56,10 +56,16 @@ local surround = {
     end
 }
 
-local commenter = {
+local comment = {
     'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false
+    opts = {
+        sticky = true,
+        toggler = {
+            line =  ',cc',
+            block = ',bc',
+        }
+    },
+    lazy = false,
 }
 
 local telescope = {
@@ -192,7 +198,7 @@ require("lazy").setup({
     lualine_plugin,
     colorscheme,
     surround,
-    commenter,
+    comment,
     telescope,
     tree_sitter,
     nvim_cmp,
