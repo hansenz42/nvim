@@ -1,3 +1,4 @@
+let mapleader = ','
 lua require('lazynvim-init')
 lua require('init-lua')
 
@@ -14,7 +15,6 @@ set scrolloff=5
 set autochdir
 set incsearch
 
-let mapleader = ','
 
 " nvimtree plugin hotkey for neovim
 nmap <leader>ee :NvimTreeFocus<CR>
