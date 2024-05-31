@@ -9,7 +9,7 @@ set backspace=2
 set expandtab
 set number
 set shiftwidth=4
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set number relativenumber
 set scrolloff=5
 set autochdir
@@ -28,7 +28,6 @@ vnoremap L $
 nnoremap K %
 vnoremap K %
 nnoremap K i<CR><Esc>
-
 " Telescope config
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -38,3 +37,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " ToggleTerm mapping
 nnoremap <leader>tt <cmd>ToggleTerm direction=horizontal<cr>
 tnoremap <C-w>w <C-\><C-n>
+
+" for clipboard
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
