@@ -63,7 +63,13 @@ local comment = {
         toggler = {
             line =  '<leader>cc',
             block = '<leader>bc',
-        }
+        },
+        opleader = {
+            ---Line-comment keymap
+            line = 'gc',
+            ---Block-comment keymap
+            block = 'gb',
+        },
     },
     lazy = false,
 }
