@@ -212,6 +212,14 @@ local lspsaga = {
     }
 }
 
+local lspconfig = {
+    "neovim/nvim-lspconfig",
+    config = function ()
+        local lspconfig = require('lspconfig')
+        lspconfig['lua_ls'].setup({})
+    end
+}
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
@@ -225,6 +233,7 @@ require("lazy").setup({
     codeium,
     toggleterm,
     conform,
-    lspsaga
+    lspsaga,
+    lspconfig
 })
    
