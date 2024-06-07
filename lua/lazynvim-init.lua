@@ -13,7 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
--- 
+--
 -- 2. 将 lazypath 设置为运行时路径
 -- rtp（runtime path）
 -- nvim进行路径搜索的时候，除已有的路径，还会从prepend的路径中查找
@@ -21,77 +21,78 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local nvim_tree_plugin = {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    dependencies = {"nvim-tree/nvim-web-devicons"},
-    config = function()
-        require("nvim-tree").setup {
-        }
-    end
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		require("nvim-tree").setup {
+		}
+	end
 }
 local lualine_plugin = {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-        require('lualine').setup()
-    end
+	'nvim-lualine/lualine.nvim',
+	config = function()
+		require('lualine').setup()
+	end
 }
 
 local colorscheme = {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-        vim.cmd([[colorscheme nordfox]])
-    end,
+	"EdenEast/nightfox.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd([[colorscheme nordfox]])
+	end,
 }
 
 local surround = {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+	"kylechui/nvim-surround",
+	version = "*", -- Use for stability; omit to use `main` branch for the latest features
+	event = "VeryLazy",
+	config = function()
+		require("nvim-surround").setup({
+			-- Configuration here, or leave empty to use defaults
+		})
+	end
 }
 
 local comment = {
-    'numToStr/Comment.nvim',
-    opts = {
-        sticky = true,
-        toggler = {
-            line =  '<leader>cc',
-            block = '<leader>bc',
-        },
-        opleader = {
-            ---Line-comment keymap
-            line = 'gc',
-            ---Block-comment keymap
-            block = 'gb',
-        },
-    },
-    lazy = false,
+	'numToStr/Comment.nvim',
+	opts = {
+		sticky = true,
+		toggler = {
+			line = '<leader>cc',
+			block = '<leader>bc',
+		},
+		opleader = {
+			---Line-comment keymap
+			line = 'gc',
+			---Block-comment keymap
+			block = 'gb',
+		},
+	},
+	lazy = false,
 }
 
 local telescope = {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-    dependencies = {'nvim-lua/plenary.nvim'}
+	'nvim-telescope/telescope.nvim',
+	tag = '0.1.6',
+	dependencies = { 'nvim-lua/plenary.nvim' }
 }
 
 local tree_sitter = {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function () 
-      local configs = require("nvim-treesitter.configs")
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
+		local configs = require("nvim-treesitter.configs")
 
-      configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "java", "python", "rust", "go" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
-    end
+		configs.setup({
+			ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "java", "python", "rust", "go" },
+			sync_install = false,
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+	end
 }
 
 local nvim_cmp = {
@@ -150,90 +151,97 @@ nvim_cmp.config = function()
 end
 
 local codeium = {
-    "Exafunction/codeium.vim",
-    event = "BufEnter"
+	"Exafunction/codeium.vim",
+	event = "BufEnter"
 }
 
 -- terminal plugin
 local toggleterm = {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = true
+	"akinsho/toggleterm.nvim",
+	version = "*",
+	config = true
 }
 
 -- formatiing plugins
 local conform = {
-  "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
-  keys = {
-    {
-      -- Customize or remove this keymap to your liking
-      "<leader>fo",
-      function()
-        require("conform").format({ async = true, lsp_fallback = true })
-      end,
-      mode = "",
-      desc = "Format buffer",
-    },
-  },
-  -- Everything in opts will be passed to setup()
-  opts = {
-    -- Define your formatters
-    formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "isort" },
-      javascript = { "prettierd" },
-    },
-    -- Set up format-on-save
-    format_on_save = { timeout_ms = 500, lsp_fallback = true },
-    -- Customize formatters
-    formatters = {
-      shfmt = {
-        prepend_args = { "-i", "2" },
-      },
-    },
-  },
-  init = function()
-    -- If you want the formatexpr, here is the place to set it
-    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-  end,
+	"stevearc/conform.nvim",
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
+	keys = {
+		{
+			-- Customize or remove this keymap to your liking
+			"<leader>fo",
+			function()
+				require("conform").format({ async = true, lsp_fallback = true })
+			end,
+			mode = "",
+			desc = "Format buffer",
+		},
+	},
+	-- Everything in opts will be passed to setup()
+	opts = {
+		-- Define your formatters
+		formatters_by_ft = {
+			lua = { "stylua" },
+			python = { "isort" },
+			javascript = { "prettierd" },
+		},
+		-- Set up format-on-save
+		format_on_save = { timeout_ms = 500, lsp_fallback = true },
+		-- Customize formatters
+		formatters = {
+			shfmt = {
+				prepend_args = { "-i", "2" },
+			},
+		},
+	},
+	init = function()
+		-- If you want the formatexpr, here is the place to set it
+		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+	end,
 }
 
 -- lsp ide plugin
 local lspsaga = {
-    'nvimdev/lspsaga.nvim',
-    config = function()
-        require('lspsaga').setup({})
-    end,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter', -- optional
-        'nvim-tree/nvim-web-devicons',     -- optional
-    }
+	'nvimdev/lspsaga.nvim',
+	config = function()
+		require('lspsaga').setup({})
+	end,
+	dependencies = {
+		'nvim-treesitter/nvim-treesitter', -- optional
+		'nvim-tree/nvim-web-devicons', -- optional
+	}
 }
 
 local lspconfig = {
-    "neovim/nvim-lspconfig",
-    config = function ()
-        local lspconfig = require('lspconfig')
-        lspconfig['lua_ls'].setup({})
-    end
+	"neovim/nvim-lspconfig",
+	config = function()
+		local lspconfig = require('lspconfig')
+		lspconfig['lua_ls'].setup({})
+	end
+}
+
+local lsp_signature = {
+	"ray-x/lsp_signature.nvim",
+	event = "VeryLazy",
+	opts = {},
+	config = function(_, opts) require 'lsp_signature'.setup(opts) end
 }
 
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
-    nvim_tree_plugin, 
-    lualine_plugin,
-    colorscheme,
-    surround,
-    comment,
-    telescope,
-    tree_sitter,
-    nvim_cmp,
-    codeium,
-    toggleterm,
-    conform,
-    lspsaga,
-    lspconfig
+	nvim_tree_plugin,
+	lualine_plugin,
+	colorscheme,
+	surround,
+	comment,
+	telescope,
+	tree_sitter,
+	nvim_cmp,
+	codeium,
+	toggleterm,
+	conform,
+	lspsaga,
+	lspconfig,
+	lsp_signature
 })
-   
