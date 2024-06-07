@@ -17,8 +17,8 @@ set incsearch
 
 
 " nvimtree plugin hotkey for neovim
-nmap <leader>ee :NvimTreeFocus<CR>
-nmap <C-n> :NvimTreeFocus<CR>
+nmap <leader>ee :NvimTreeToggle<CR>
+nmap <C-n> :NvimTreeToggle<CR>
 
 " basic key mapping
 nnoremap L $
@@ -45,6 +45,8 @@ nnoremap <leader>p "0p
 xnoremap <leader>p "0p
 
 " for lspsaga
-nnoremap gd <cmd>Lspsaga peek_definition<CR>
+nnoremap gd <cmd>Lspsaga goto_definition<CR>
+nnoremap <leader>gd <cmd>Lspsaga peek_definition<CR>
 nnoremap gh <cmd>Lspsaga hover_doc<CR>
 nnoremap <C-R> <cmd>Lspsaga rename<CR>
+nnoremap go <cmd>Lspsaga outline<CR>
