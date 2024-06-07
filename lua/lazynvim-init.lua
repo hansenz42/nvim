@@ -154,12 +154,14 @@ local codeium = {
     event = "BufEnter"
 }
 
+-- terminal plugin
 local toggleterm = {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = true
 }
 
+-- formatiing plugins
 local conform = {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
@@ -198,6 +200,18 @@ local conform = {
   end,
 }
 
+-- lsp ide plugin
+local lspsaga = {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
+    }
+}
+
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
     nvim_tree_plugin, 
@@ -210,6 +224,7 @@ require("lazy").setup({
     nvim_cmp,
     codeium,
     toggleterm,
-    conform
+    conform,
+    lspsaga
 })
    
