@@ -43,3 +43,8 @@ nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 nnoremap <leader>p "0p
 xnoremap <leader>p "0p
+
+" for lspsaga
+nnoremap gd <cmd>Lspsaga peek_definition<CR>
+nnoremap gh <cmd>Lspsaga hover_doc<CR>
+nnoremap <C-R> <cmd>Lspsaga rename<CR>
