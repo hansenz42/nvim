@@ -14,6 +14,7 @@ set number relativenumber
 set scrolloff=5
 set autochdir
 set incsearch
+set foldmethod=syntax
 
 
 " nvimtree plugin hotkey for neovim
