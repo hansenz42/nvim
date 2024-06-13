@@ -48,5 +48,5 @@ xnoremap <leader>p "0p
 nnoremap gd <cmd>Lspsaga goto_definition<CR>
 nnoremap <leader>gd <cmd>Lspsaga peek_definition<CR>
 nnoremap gh <cmd>Lspsaga hover_doc<CR>
-nnoremap <C-R> <cmd>Lspsaga rename<CR>
+nnoremap R <cmd>Lspsaga rename<CR>
 nnoremap go <cmd>Lspsaga outline<CR>

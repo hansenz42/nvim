@@ -209,7 +209,7 @@ local lspsaga = {
     end,
     dependencies = {
         'nvim-treesitter/nvim-treesitter', -- optional
-        'nvim-tree/nvim-web-devicons', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
     }
 }
 
@@ -218,6 +218,7 @@ local lspconfig = {
     config = function()
         local lspconfig = require('lspconfig')
         lspconfig['lua_ls'].setup({})
+        lspconfig['pyright'].setup({})
     end
 }
 
