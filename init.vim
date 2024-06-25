@@ -42,8 +42,8 @@ tnoremap <C-w>w <C-\><C-n>
 " for clipboard
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
-nnoremap <leader>p "0p
-xnoremap <leader>p "0p
+nnoremap <leader>p "*p
+xnoremap <leader>p "*p
 
 " for lspsaga
 nnoremap gd <cmd>Lspsaga goto_definition<CR>
