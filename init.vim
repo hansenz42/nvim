@@ -15,6 +15,7 @@ set scrolloff=5
 set autochdir
 set incsearch
 set foldmethod=syntax
+set nofoldenable
 
 
 " nvimtree plugin hotkey for neovim
