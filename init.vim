@@ -1,6 +1,6 @@
 let mapleader = ','
-lua require('lazynvim-init')
-lua require('init-lua')
+
+lua require('config.lazy')
 
 filetype plugin indent on
 syntax on
@@ -31,9 +31,9 @@ nnoremap K %
 vnoremap K %
 nnoremap K i<CR><Esc>
 " Telescope config
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+"nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " ToggleTerm mapping
@@ -47,8 +47,8 @@ nnoremap <leader>p "*p
 xnoremap <leader>p "*p
 
 " for lspsaga
-nnoremap gd <cmd>Lspsaga goto_definition<CR>
-nnoremap <leader>gd <cmd>Lspsaga peek_definition<CR>
-nnoremap gh <cmd>Lspsaga hover_doc<CR>
-nnoremap R <cmd>Lspsaga rename<CR>
-nnoremap go <cmd>Lspsaga outline<CR>
+"nnoremap gd <cmd>Lspsaga goto_definition<CR>
+"nnoremap <leader>gd <cmd>Lspsaga peek_definition<CR>
+"nnoremap gh <cmd>Lspsaga hover_doc<CR>
+"nnoremap R <cmd>Lspsaga rename<CR>
+"nnoremap go <cmd>Lspsaga outline<CR>
