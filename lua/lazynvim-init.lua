@@ -222,6 +222,7 @@ local lspconfig = {
     end
 }
 
+-- read signature from lsp plugin
 local lsp_signature = {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",
