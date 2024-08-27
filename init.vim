@@ -27,7 +27,6 @@ vnoremap K %
 nnoremap K i<CR><Esc>
 
 " ToggleTerm mapping
-nnoremap <leader>tt <cmd>ToggleTerm direction=horizontal<cr>
 tnoremap <C-w>w <C-\><C-n>
 
 " for clipboard
